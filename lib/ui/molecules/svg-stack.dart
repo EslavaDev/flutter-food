@@ -3,16 +3,15 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class SvgStack extends StatelessWidget {
   final String name;
-  final double positionX;
-  final double positionY;
-  SvgStack({Key key, this.name, this.positionX = 0, this.positionY = 0}) : super(key: key);
+  final AlignmentGeometry alignment;
+  SvgStack({Key key, this.name, this.alignment = const Alignment(0, 0)}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     var nameRender = this.name;
     var size = MediaQuery.of(context).size;
     return Align(
-      alignment: Alignment(this.positionX, this.positionY),
+      alignment: this.alignment,
       child: SvgPicture.asset(
   'assets/svg/$nameRender.svg',
   width:  80 * size.width / 100,

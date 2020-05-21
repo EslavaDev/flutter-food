@@ -1,2 +1,3 @@
-const String MoreRoute = 'More';
-const String HomeRoute = 'Home';
+const String MoreRoute = '/more';
+const String LoginRoute = '/login';
+const String HomeRoute = '/home';

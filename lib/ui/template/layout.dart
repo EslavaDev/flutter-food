@@ -31,8 +31,8 @@ class LayoutCustom extends StatelessWidget {
     switch (type) {
       case 1:
         list = [
-          SvgStack(name:'layout1_header', positionX: 1, positionY: -1,),
-          SvgStack(name:'layout1_footer', positionY: 1, positionX: -1),
+          SvgStack(name:'layout1_header', alignment: Alignment.topRight,),
+          SvgStack(name:'layout1_footer', alignment: Alignment.bottomLeft,),
           componnet,
         ];
         break;

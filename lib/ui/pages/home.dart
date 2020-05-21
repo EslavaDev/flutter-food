@@ -1,3 +1,4 @@
+import 'package:custom1/states/product.dart';
 import 'package:custom1/ui/atoms/float-button-navigation.dart';
 import 'package:custom1/ui/molecules/search.dart';
 import 'package:custom1/ui/template/layout.dart';
@@ -7,7 +8,7 @@ import 'package:custom1/src/stateless2.dart';
 import 'package:custom1/ui/organims/bottom-navigation-bar.dart';
 import 'package:custom1/src/stateless.dart';
 import 'package:custom1/helpers/router-path.dart' as routes;
-
+import 'package:provider/provider.dart';
 
 class Home extends StatefulWidget {
   Home({Key key}) : super(key: key);
@@ -18,10 +19,12 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   final PageController controller = PageController();
+  final ProductProvider _provider = ProductProvider();
   String textAppbar;
   @override
   void initState() {
     super.initState();
+    _provider.getProduct();
     textAppbar = 'Stateless';
   }
 
@@ -37,7 +40,22 @@ class _HomeState extends State<Home> {
             Column(
               children: <Widget>[
                 Search(),
-                Stataless2(title: this.textAppbar)
+                Consumer<ProductProvider>(
+                  builder: (_, snapshot, __) {
+                    print(snapshot.productList.toString());
+                    if (snapshot.loading) {
+                      return Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    }
+                    return ListView.builder(
+                        itemCount: snapshot.productList.length,
+                        itemBuilder: (_, index) {
+                          return Stataless2(
+                              title: snapshot.productList[index].name);
+                        });
+                  },
+                ),
               ],
             ),
             Stataless(),

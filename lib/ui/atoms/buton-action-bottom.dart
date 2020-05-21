@@ -11,9 +11,6 @@ class ButonActionBottom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = this.isSide ? 31.0 : 55.0;
-    print(size);
-    print(this.index);
-    print(this.isLeft);
     return Container(
                 width: 55,
                 margin: isLeft ? EdgeInsets.only(left: size) : EdgeInsets.only(right: size),
