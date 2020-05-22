@@ -35,24 +35,24 @@ class Product {
     });
 
     factory Product.fromJson(Map<String, dynamic> json) => Product(
-        id: json["id"],
-        image: json["image"],
-        color: json["color"],
-        name: json["name"],
-        stepUnit: json["stepUnit"].toDouble(),
-        price: json["price"],
-        description: json["description"],
-        start: json["start"],
+        id: json['id'],
+        image: json['image'],
+        color: json['color'],
+        name: json['name'],
+        stepUnit: json['stepUnit'].toDouble(),
+        price: json['price'],
+        description: json['description'],
+        start: json['start'],
     );
 
     Map<String, dynamic> toJson() => {
-        "id": id,
-        "image": image,
-        "color": color,
-        "name": name,
-        "stepUnit": stepUnit,
-        "price": price,
-        "description": description,
-        "start": start,
+        'id': id,
+        'image': image,
+        'color': color,
+        'name': name,
+        'stepUnit': stepUnit,
+        'price': price,
+        'description': description,
+        'start': start,
     };
 }

@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 
 class MyCard extends StatelessWidget {
@@ -17,18 +15,17 @@ class MyCard extends StatelessWidget {
         child: Column(
           children: <Widget>[
             Text(
-              this.title,
+          title,
               style: TextStyle(fontSize: 30, color: Colors.grey),
             ),
             Icon(
-              this.icon,
-              color: this.iconColor,
+              icon,
+              color: iconColor,
               size: 40.0,
             )
           ],
         ),
       ),
     );
-    ;
   }
 }

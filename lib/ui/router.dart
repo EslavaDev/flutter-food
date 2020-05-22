@@ -12,7 +12,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case routes.LoginRoute:
       return MaterialPageRoute(builder: (context) => Login());
     case routes.HomeRoute:
-      var userName = settings.arguments as String;
+//      var userName = settings.arguments as String;
       return MaterialPageRoute(
           builder: (context) => Home());
     default:

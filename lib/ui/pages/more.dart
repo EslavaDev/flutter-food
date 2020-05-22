@@ -24,14 +24,14 @@ class More extends StatelessWidget {
           },
         ),
         elevation: 0,
-        title: Text("Title"),
+        title: const Text('Title'),
       ),
       body: LayoutCustom(
         safeArea: true,
         type: 1,
         // appBar: true,
         child: Center(
-          child: Text('More'),
+          child: const Text('More'),
         ),
       ),
     );

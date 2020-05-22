@@ -8,10 +8,10 @@ class SvgStack extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var nameRender = this.name;
+    var nameRender = name;
     var size = MediaQuery.of(context).size;
     return Align(
-      alignment: this.alignment,
+      alignment: alignment,
       child: SvgPicture.asset(
   'assets/svg/$nameRender.svg',
   width:  80 * size.width / 100,

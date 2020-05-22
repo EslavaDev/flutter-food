@@ -11,13 +11,13 @@ class TextFieldCustom extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Container(
-      width: size.width - this.sizeProps,
+      width: size.width - sizeProps,
       margin: EdgeInsets.only(left: 10),
       child: TextField(
-        controller: this.onChange,
+        controller: onChange,
         decoration: InputDecoration(
-          border: this.border ? OutlineInputBorder() : InputBorder.none,
-          hintText: this.hint,
+          border: border ? OutlineInputBorder() : InputBorder.none,
+          hintText: hint,
         ),
         style: TextStyle(fontSize: 18.0, height: 1.1, color: Colors.black),
       ),

@@ -7,7 +7,14 @@ class LayoutCustom extends StatelessWidget {
   final int type;
   final bool safeArea;
   final bool appBar;
-  const LayoutCustom({Key key, this.child, this.type, this.safeArea = false, this.appBar = false}) : super(key: key);
+
+  const LayoutCustom(
+      {Key key,
+      this.child,
+      this.type,
+      this.safeArea = false,
+      this.appBar = false})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,30 +27,37 @@ class LayoutCustom extends StatelessWidget {
     );
   }
 
- Widget buildLayout () {
+  Widget buildLayout() {
     Widget render;
-    var componnet = this.child;
-    if(this.safeArea){
-      componnet = SafeArea(child: this.child);
-    }
-    if(type != null){
-      var list = [componnet];
-    switch (type) {
-      case 1:
-        list = [
-          SvgStack(name:'layout1_header', alignment: Alignment.topRight,),
-          SvgStack(name:'layout1_footer', alignment: Alignment.bottomLeft,),
-          componnet,
-        ];
-        break;
-      default:
-    }
-    if(appBar) {
-      list.insert(list.length -2, AppBarCustom());
-    }
-    render = Stack(children: <Widget>[...list]);
-    }
-  return render;
-  }
+    var component = child;
 
+    if (safeArea) {
+      component = SafeArea(child: child);
+    }
+
+    if (type != null) {
+      var list = [component];
+      switch (type) {
+        case 1:
+          list = [
+            SvgStack(
+              name: 'layout1_header',
+              alignment: Alignment.topRight,
+            ),
+            SvgStack(
+              name: 'layout1_footer',
+              alignment: Alignment.bottomLeft,
+            ),
+            component,
+          ];
+          break;
+        default:
+      }
+      if (appBar) {
+        list.insert(list.length - 2, AppBarCustom());
+      }
+      render = Stack(children: <Widget>[...list]);
+    }
+    return render;
+  }
 }

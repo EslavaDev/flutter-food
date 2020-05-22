@@ -5,5 +5,5 @@ import 'navigator.dart';
 GetIt locator = GetIt.instance;
 
 void setupLocator() {
-  locator.registerLazySingleton(() => Navigatior());
+  locator.registerLazySingleton(() => Navigator());
 }

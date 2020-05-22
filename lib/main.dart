@@ -5,13 +5,17 @@ import 'package:custom1/helpers/router-path.dart' as routes;
 import 'package:custom1/ui/router.dart' as router;
 import 'package:provider/provider.dart';
 
-void main() => runApp(MultiProvider(
-  providers: [
-    ChangeNotifierProvider(create: (_) => ProductProvider())
-  ],
-  child:   MaterialApp(
-  home:  Home(),
-   onGenerateRoute: router.generateRoute,
-        initialRoute: routes.LoginRoute,
-  ),
-));
+void main() => runApp(
+      MultiProvider(
+        providers: [
+          ChangeNotifierProvider(
+            create: (_) => ProductProvider()..getProduct(),
+          ),
+        ],
+        child: MaterialApp(
+          home: Home(),
+          onGenerateRoute: router.generateRoute,
+          initialRoute: routes.LoginRoute,
+        ),
+      ),
+    );

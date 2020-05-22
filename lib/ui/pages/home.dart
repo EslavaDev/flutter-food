@@ -19,14 +19,6 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   final PageController controller = PageController();
-  final ProductProvider _provider = ProductProvider();
-  String textAppbar;
-  @override
-  void initState() {
-    super.initState();
-    _provider.getProduct();
-    textAppbar = 'Stateless';
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,18 +34,20 @@ class _HomeState extends State<Home> {
                 Search(),
                 Consumer<ProductProvider>(
                   builder: (_, snapshot, __) {
-                    print(snapshot.productList.toString());
                     if (snapshot.loading) {
                       return Center(
                         child: CircularProgressIndicator(),
                       );
                     }
                     return ListView.builder(
-                        itemCount: snapshot.productList.length,
-                        itemBuilder: (_, index) {
-                          return Stataless2(
-                              title: snapshot.productList[index].name);
-                        });
+                      shrinkWrap: true,
+                      itemCount: snapshot.productList.length,
+                      itemBuilder: (_, index) {
+                        return Stataless2(
+                          title: snapshot.productList[index].name,
+                        );
+                      },
+                    );
                   },
                 ),
               ],
@@ -74,7 +68,7 @@ class _HomeState extends State<Home> {
         params: {},
       ),
       bottomNavigationBar: BottomNavigationBarCustom(
-        controller: this.controller,
+        controller: controller,
       ),
     );
   }

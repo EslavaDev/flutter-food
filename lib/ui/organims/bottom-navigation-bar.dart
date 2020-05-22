@@ -12,10 +12,10 @@ class BottomNavigationBarCustom extends StatefulWidget {
 
 class BBottomNavigationBarCustomState extends State<BottomNavigationBarCustom> {
   final list = [
-    {"icon": Icons.home, "title": "Home"},
-    {"icon": Icons.check_circle_outline, "title": "Orders"},
-    {"icon": Icons.help_outline, "title": "Support"},
-    {"icon": Icons.format_list_bulleted, "title": "Más"}
+    {'icon': Icons.home, 'title': 'Home'},
+    {'icon': Icons.check_circle_outline, 'title': 'Orders'},
+    {'icon': Icons.help_outline, 'title': 'Support'},
+    {'icon': Icons.format_list_bulleted, 'title': 'Más'}
   ];
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class BBottomNavigationBarCustomState extends State<BottomNavigationBarCustom> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           // mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
-            ...list.map((e) =>  ButonActionBottom(
+            ...list.map((e) =>  ButtonActionBottom(
           icon: e['icon'],
           onTap: onTap,
           isSide: list.indexOf(e) == 0 || list.indexOf(e) == list.length -1,

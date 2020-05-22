@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:custom1/models/product.dart';
 
 class ProductProvider with ChangeNotifier{
-  ProductRepository _repository = new ProductRepository();
+  final ProductRepository _repository = ProductRepository();
   List<Product> _productList;
   bool _loading = true;
 

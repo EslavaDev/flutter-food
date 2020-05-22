@@ -20,6 +20,7 @@ class _SearchState extends State<Search> {
 
     myController.addListener(_printLatestValue);
   }
+
   @override
   void dispose() {
     // Clean up the controller when the widget is removed from the widget tree.
@@ -28,16 +29,16 @@ class _SearchState extends State<Search> {
     super.dispose();
   }
 
-  _printLatestValue() {
-    
+  void _printLatestValue() {
     if (_timer != null) {
       _timer.cancel();
     }
     _timer = Timer(Duration(seconds: 3), () {
-      print("Second text field: ${myController.text}");
+      print('Second text field: ${myController.text}');
     });
   }
-     @override
+
+  @override
   Widget build(BuildContext context) {
     final padding = MediaQuery.of(context).padding;
     final size = MediaQuery.of(context).size;
@@ -61,7 +62,8 @@ class _SearchState extends State<Search> {
               height: 56.0,
               padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 4.0),
               decoration: BoxDecoration(
-                border: Border.all(width: .5, style: BorderStyle.solid, color: Colors.black26),
+                border: Border.all(
+                    width: .5, style: BorderStyle.solid, color: Colors.black26),
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(8.0),
               ),
@@ -69,7 +71,11 @@ class _SearchState extends State<Search> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Icon(Icons.search, color: Colors.black45),
-                  TextFieldCustom(hint: 'Donde estas Buscando', sizeProps: 180.0, onChange: myController, ),
+                  TextFieldCustom(
+                    hint: 'Donde estas Buscando',
+                    sizeProps: 180.0,
+                    onChange: myController,
+                  ),
                   IconButton(
                     onPressed: () => {},
                     icon: Icon(Icons.my_location, color: Colors.black45),
@@ -91,42 +97,42 @@ class _SearchState extends State<Search> {
 // class RestaurantHomeViewAppBar extends StatelessWidget {
 //   RestaurantHomeViewAppBar();
 
-  // void checkMyLocation(BuildContext context) async {
-  //   final valid = await checkPermission();
-  //   if (!valid) {
-  //     PermissionHandler permission = PermissionHandler();
-  //     Map<PermissionGroup, PermissionStatus> map =
-  //         await permission.requestPermissions([PermissionGroup.location]);
-  //     if (map[PermissionGroup.location] == PermissionStatus.granted) {
-  //       handleLocation(context);
-  //     }
-  //   } else {
-  //     handleLocation(context);
-  //   }
-  // }
+// void checkMyLocation(BuildContext context) async {
+//   final valid = await checkPermission();
+//   if (!valid) {
+//     PermissionHandler permission = PermissionHandler();
+//     Map<PermissionGroup, PermissionStatus> map =
+//         await permission.requestPermissions([PermissionGroup.location]);
+//     if (map[PermissionGroup.location] == PermissionStatus.granted) {
+//       handleLocation(context);
+//     }
+//   } else {
+//     handleLocation(context);
+//   }
+// }
 
-  // void handleLocation(BuildContext context) async {
-  //   final settings = AppSettings.of(context);
-  //   onCityChanged(null);
-  //   final location = Location();
-  //   final position = await location.getLocation();
-  //   model.getNearbyRestaurants(settings.collectionId,
-  //         settings.projectId, position.latitude, position.longitude);
-  // }
+// void handleLocation(BuildContext context) async {
+//   final settings = AppSettings.of(context);
+//   onCityChanged(null);
+//   final location = Location();
+//   final position = await location.getLocation();
+//   model.getNearbyRestaurants(settings.collectionId,
+//         settings.projectId, position.latitude, position.longitude);
+// }
 
-  // void findCities(BuildContext context) {
-  //   final settings = AppSettings.of(context);
-  //   showSearch<City>(context: context, delegate: DataSearch())
-  //       .then((selectedCity) {
-  //     if (selectedCity != null) {
-  //       onCityChanged(selectedCity);
-  //       model.getRestaurants(
-  //         settings.collectionId,
-  //         settings.projectId,
-  //         selectedCity,
-  //       );
-  //     }
-  //   });
-  // }
- 
+// void findCities(BuildContext context) {
+//   final settings = AppSettings.of(context);
+//   showSearch<City>(context: context, delegate: DataSearch())
+//       .then((selectedCity) {
+//     if (selectedCity != null) {
+//       onCityChanged(selectedCity);
+//       model.getRestaurants(
+//         settings.collectionId,
+//         settings.projectId,
+//         selectedCity,
+//       );
+//     }
+//   });
+// }
+
 // }

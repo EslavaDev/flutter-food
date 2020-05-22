@@ -129,8 +129,8 @@ class _LoginState extends State<Login> with ValidationMixins {
                       if (_formKey.currentState.validate()) {
                         // No any error in validation
                         _formKey.currentState.save();
-                        print("Mobile $_email");
-                        print("Email $_password");
+                        print('Mobile $_email');
+                        print('Email $_password');
                         Navigator.of(context).pushNamed(router.HomeRoute);
                       } else {
                         // validation error

@@ -10,11 +10,11 @@ class FloatButtonNavigation extends StatelessWidget {
   Widget build(BuildContext context) {
     return FloatingActionButton(
         onPressed: () {
-          Navigator.of(context).pushNamed(this.route, arguments: this.params);
+          Navigator.of(context).pushNamed(route, arguments: params);
         },
   foregroundColor: Colors.red,
         child: Icon(
-         this.icon,
+         icon,
           color: Colors.white,
         ),
         backgroundColor: Color(0xFF9AA739),
